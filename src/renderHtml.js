@@ -1,3 +1,55 @@
+function renderManager() {
+    return `
+<div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
+    <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
+        <h2 class="text-white text-2xl pt-2 pl-2">${getName()}</h2>
+        <h3 class="text-white text-xl text-center"><i class="fas fa-beer"></i> ${getRole()}</h3>
+    </div>
+    <div class="py-12 px-2">
+        <p class="pb-1"><span class="font-bold">ID: </span> ${getID()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span> ${getEmail()}</p>
+        <p class="pb-1"><span class="font-bold">Office number: </span> ${getOfficeNumber()}</p>
+    </div>
+</div>
+`
+}
+
+function renderEngineer() {
+    return `
+<div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
+    <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
+        <h2 class="text-white text-2xl pt-2 pl-2">${getName()}</h2>
+        <h3 class="text-white text-xl text-center"><i class="fas fa-user-astronaut"></i> ${getRole()}</h3>
+    </div>
+    <div class="py-12 px-2">
+        <p class="pb-1"><span class="font-bold">ID: </span>${getID()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span>${getEmail()}</p>
+        <p class="pb-1"><span class="font-bold">GitHub: </span>${getGithub()}</p>
+    </div>
+</div>
+`
+}
+
+function renderIntern() {
+    return `
+<div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
+    <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
+        <h2 class="text-white text-2xl pt-2 pl-2">${getName()}</h2>
+        <h3 class="text-white text-xl text-center"><i class="fas fa-user-graduate"></i> ${getRole()}</h3>
+    </div>
+    <div class="py-12 px-2">
+        <p class="pb-1"><span class="font-bold">ID: </span>${getID()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span>${getEmail()}</p>
+        <p class="pb-1"><span class="font-bold">School: </span>${getSchool()}</p>
+    </div>
+</div>
+`
+}
+
+function renderTeam() {
+    
+}
+
 const renderHtml = (responses) => 
 `
 <!DOCTYPE html>
@@ -23,7 +75,7 @@ const renderHtml = (responses) =>
     <div class="container mx-auto my-20">
         <div class="flex flex-wrap gap-4 justify-center">
 
-        ${renderTeam}
+        ${renderTeam(responses)}
 
         </div>
     </div>
