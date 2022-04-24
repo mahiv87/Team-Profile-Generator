@@ -1,3 +1,5 @@
+const renderHtml = (responses) => 
+`
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,50 +22,58 @@
 
     <div class="container mx-auto my-20">
         <div class="flex flex-wrap gap-4 justify-center">
+            <-- render Manager -->
             <div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
                 <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-                    <h2 class="text-white text-2xl pt-2 pl-2">Marcus</h2>
+                    <h2 class="text-white text-2xl pt-2 pl-2">${responses.name}</h2>
                     <h3 class="text-white text-xl text-center"><i class="fas fa-beer"></i> Manager</h3>
                 </div>
                 <div class="py-12 px-2">
-                    <p>ID: 1</p>
-                    <p>Email: marcus@marcus.com</p>
-                    <p>Office number: 1</p>
+                    <p>ID: ${responses.id}</p>
+                    <p>Email: ${responses.email}</p>
+                    <p>Office number: ${responses.number}</p>
                 </div>
             </div>
+            <-- render Engineer -->
             <div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
                 <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-                    <h2 class="text-white text-2xl pt-2 pl-2">Marcus</h2>
+                    <h2 class="text-white text-2xl pt-2 pl-2">${responses.name}</h2>
                     <h3 class="text-white text-xl text-center"><i class="fas fa-user-astronaut"></i> Engineer</h3>
                 </div>
                 <div class="py-12 px-2">
-                    <p>ID: 2</p>
-                    <p>Email: marcus@marcus.com</p>
-                    <p>GitHub: marcus</p>
+                    <p>ID: ${responses.id}</p>
+                    <p>Email: ${responses.email} </p>
+                    <p>GitHub: ${responses.github} </p>
                 </div>
             </div>
+            <-- render Employee -->
             <div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
                 <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-                    <h2 class="text-white text-2xl pt-2 pl-2">Marcus</h2>
+                    <h2 class="text-white text-2xl pt-2 pl-2"> ${responses.name} </h2>
                     <h3 class="text-white text-xl text-center"><i class="fas fa-user"></i> Employee</h3>
                 </div>
                 <div class="py-12 px-2">
-                    <p>ID: 3</p>
-                    <p>Email: marcus@marcus.com</p>
+                    <p>ID: ${responses.id} </p>
+                    <p>Email: ${responses.email} </p>
                 </div>
             </div>
+            <-- render Intern -->
             <div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
                 <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-                    <h2 class="text-white text-2xl pt-2 pl-2">Marcus</h2>
+                    <h2 class="text-white text-2xl pt-2 pl-2"> ${responses.name} </h2>
                     <h3 class="text-white text-xl text-center"><i class="fas fa-user-graduate"></i> Intern</h3>
                 </div>
                 <div class="py-12 px-2">
-                    <p>ID: 4</p>
-                    <p>Email: marcus@marcus.com</p>
-                    <p>School: 2University</p>
+                    <p>ID: ${responses.id} </p>
+                    <p>Email: ${responses.email} </p>
+                    <p>School: ${responses.school} </p>
                 </div>
             </div>
+
         </div>
     </div>
 </body>
 </html>
+`
+
+module.exports = renderHtml;
