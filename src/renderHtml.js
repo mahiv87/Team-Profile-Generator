@@ -7,7 +7,7 @@ function renderManager(res) {
     </div>
     <div class="py-12 px-2">
         <p class="pb-1"><span class="font-bold">ID: </span> ${res.getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span> <a class="text-sky-700" id="email" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
+        <p class="pb-1"><span class="font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
         <p class="pb-1"><span class="font-bold">Office number: </span> ${res.getOfficeNumber()}</p>
     </div>
 </div>
@@ -23,8 +23,8 @@ function renderEngineer(res) {
     </div>
     <div class="py-12 px-2">
         <p class="pb-1"><span class="font-bold">ID: </span>${res.getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span>${res.getEmail()}</p>
-        <p class="pb-1"><span class="font-bold">GitHub: </span>${res.getGithub()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
+        <p class="pb-1"><span class="font-bold">GitHub: </span><a class="text-sky-700" id="link" name="github" href="https://github.com/${res.getGithub()}" target="-blank">${res.getGithub()}</a></p>
     </div>
 </div>
 `
@@ -39,7 +39,7 @@ function renderEmployee(res) {
     </div>
     <div class="py-12 px-2">
         <p class="pb-1"><span class="font-bold">ID: </span>${res.getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span>${res.getEmail()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
     </div>
 </div>
 `
@@ -54,7 +54,7 @@ function renderIntern(res) {
     </div>
     <div class="py-12 px-2">
         <p class="pb-1"><span class="font-bold">ID: </span>${res.getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span>${res.getEmail()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
         <p class="pb-1"><span class="font-bold">School: </span>${res.getSchool()}</p>
     </div>
 </div>
