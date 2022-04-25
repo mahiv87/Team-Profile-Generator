@@ -1,57 +1,93 @@
-function renderManager() {
+function renderManager(res) {
     return `
-<div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
+<div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
     <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-        <h2 class="text-white text-2xl pt-2 pl-2">${getName()}</h2>
-        <h3 class="text-white text-xl text-center"><i class="fas fa-beer"></i> ${getRole()}</h3>
+        <h2 class="text-white text-2xl pt-2 pl-2">${res.getName()}</h2>
+        <h3 class="text-white text-xl text-center"><i class="fas fa-beer"></i> ${res.getRole()}</h3>
     </div>
     <div class="py-12 px-2">
-        <p class="pb-1"><span class="font-bold">ID: </span> ${getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span> ${getEmail()}</p>
-        <p class="pb-1"><span class="font-bold">Office number: </span> ${getOfficeNumber()}</p>
+        <p class="pb-1"><span class="font-bold">ID: </span> ${res.getID()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span> <a class="text-sky-700" id="email" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
+        <p class="pb-1"><span class="font-bold">Office number: </span> ${res.getOfficeNumber()}</p>
     </div>
 </div>
 `
 }
 
-function renderEngineer() {
+function renderEngineer(res) {
     return `
-<div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
+<div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
     <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-        <h2 class="text-white text-2xl pt-2 pl-2">${getName()}</h2>
-        <h3 class="text-white text-xl text-center"><i class="fas fa-user-astronaut"></i> ${getRole()}</h3>
+        <h2 class="text-white text-2xl pt-2 pl-2">${res.getName()}</h2>
+        <h3 class="text-white text-xl text-center"><i class="fas fa-user-astronaut"></i> ${res.getRole()}</h3>
     </div>
     <div class="py-12 px-2">
-        <p class="pb-1"><span class="font-bold">ID: </span>${getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span>${getEmail()}</p>
-        <p class="pb-1"><span class="font-bold">GitHub: </span>${getGithub()}</p>
+        <p class="pb-1"><span class="font-bold">ID: </span>${res.getID()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span>${res.getEmail()}</p>
+        <p class="pb-1"><span class="font-bold">GitHub: </span>${res.getGithub()}</p>
     </div>
 </div>
 `
 }
 
-function renderIntern() {
+function renderEmployee(res) {
     return `
-<div class="flex-none h-64 w-64 bg-white rounded-md drop-shadow-lg">
+<div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
     <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-        <h2 class="text-white text-2xl pt-2 pl-2">${getName()}</h2>
-        <h3 class="text-white text-xl text-center"><i class="fas fa-user-graduate"></i> ${getRole()}</h3>
+        <h2 class="text-white text-2xl pt-2 pl-2">${res.getName()}</h2>
+        <h3 class="text-white text-xl text-center"><i class="fas fa-user"></i> ${res.getRole()}</h3>
     </div>
     <div class="py-12 px-2">
-        <p class="pb-1"><span class="font-bold">ID: </span>${getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span>${getEmail()}</p>
-        <p class="pb-1"><span class="font-bold">School: </span>${getSchool()}</p>
+        <p class="pb-1"><span class="font-bold">ID: </span>${res.getID()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span>${res.getEmail()}</p>
     </div>
 </div>
 `
 }
 
-function renderTeam() {
-    
+function renderIntern(res) {
+    return `
+<div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
+    <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
+        <h2 class="text-white text-2xl pt-2 pl-2">${res.getName()}</h2>
+        <h3 class="text-white text-xl text-center"><i class="fas fa-user-graduate"></i> ${res.getRole()}</h3>
+    </div>
+    <div class="py-12 px-2">
+        <p class="pb-1"><span class="font-bold">ID: </span>${res.getID()}</p>
+        <p class="pb-1"><span class="font-bold">Email: </span>${res.getEmail()}</p>
+        <p class="pb-1"><span class="font-bold">School: </span>${res.getSchool()}</p>
+    </div>
+</div>
+`
 }
 
-const renderHtml = (responses) => 
-`
+function renderTeam(data) {
+    let team = '';
+    data.forEach(obj => {
+        switch (obj.getRole()) {
+            case 'Manager':
+                team += renderManager(obj);
+                break;
+            case 'Engineer':
+                team += renderEngineer(obj);
+                break;
+            case 'Employee':
+                team += renderEmployee(obj);
+                break;
+            case 'Intern':
+                team += renderIntern(obj);
+                break;
+        
+            default:
+                team = '';
+                break;
+        }
+    })
+    return team;
+}
+
+function renderHtml(data) {
+return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,12 +111,13 @@ const renderHtml = (responses) =>
     <div class="container mx-auto my-20">
         <div class="flex flex-wrap gap-4 justify-center">
 
-        ${renderTeam(responses)}
+        ${renderTeam(data)}
 
         </div>
     </div>
 </body>
 </html>
 `
+}
 
 module.exports = renderHtml;
