@@ -1,14 +1,14 @@
 function renderManager(res) {
     return `
-<div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
-    <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-        <h2 class="text-white text-2xl pt-2 pl-2">${res.getName()}</h2>
-        <h3 class="text-white text-xl text-center"><i class="fas fa-beer"></i> ${res.getRole()}</h3>
+<div class="flex-none h-64 w-80 bg-zinc-900 rounded-md drop-shadow-lg">
+    <div class="h-1/3 bg-slate-800 border-4 border-zinc-900 rounded-t-md">
+        <h2 class="text-slate-300 text-2xl pt-2 pl-2">${res.getName()}</h2>
+        <h3 class="text-slate-300 text-xl text-center"><i class="fas fa-beer"></i> ${res.getRole()}</h3>
     </div>
     <div class="py-12 px-2">
-        <p class="pb-1"><span class="font-bold">ID: </span> ${res.getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
-        <p class="pb-1"><span class="font-bold">Office number: </span> ${res.getOfficeNumber()}</p>
+        <p class="pb-1 text-sky-400"><span class="text-slate-300 font-bold">ID: </span> ${res.getID()}</p>
+        <p class="pb-1"><span class="text-slate-300 font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
+        <p class="pb-1 text-sky-400"><span class="text-slate-300 font-bold">Office number: </span> ${res.getOfficeNumber()}</p>
     </div>
 </div>
 `
@@ -16,15 +16,15 @@ function renderManager(res) {
 
 function renderEngineer(res) {
     return `
-<div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
-    <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-        <h2 class="text-white text-2xl pt-2 pl-2">${res.getName()}</h2>
-        <h3 class="text-white text-xl text-center"><i class="fas fa-user-astronaut"></i> ${res.getRole()}</h3>
+<div class="flex-none h-64 w-80 bg-zinc-900 rounded-md drop-shadow-lg">
+    <div class="h-1/3 bg-slate-800 border-4 border-zinc-900 rounded-t-md">
+        <h2 class="text-slate-300 text-2xl pt-2 pl-2">${res.getName()}</h2>
+        <h3 class="text-slate-300 text-xl text-center"><i class="fas fa-user-astronaut"></i> ${res.getRole()}</h3>
     </div>
     <div class="py-12 px-2">
-        <p class="pb-1"><span class="font-bold">ID: </span>${res.getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
-        <p class="pb-1"><span class="font-bold">GitHub: </span><a class="text-sky-700" id="link" name="github" href="https://github.com/${res.getGithub()}" target="-blank">${res.getGithub()}</a></p>
+        <p class="pb-1 text-sky-400"><span class="text-slate-300 font-bold">ID: </span>${res.getID()}</p>
+        <p class="pb-1"><span class="text-slate-300 font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
+        <p class="pb-1"><span class="text-slate-300 font-bold">GitHub: </span><a class="text-sky-700" id="link" name="github" href="https://github.com/${res.getGithub()}" target="-blank">${res.getGithub()}</a></p>
     </div>
 </div>
 `
@@ -32,14 +32,14 @@ function renderEngineer(res) {
 
 function renderEmployee(res) {
     return `
-<div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
-    <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-        <h2 class="text-white text-2xl pt-2 pl-2">${res.getName()}</h2>
-        <h3 class="text-white text-xl text-center"><i class="fas fa-user"></i> ${res.getRole()}</h3>
+<div class="flex-none h-64 w-80 bg-zinc-900 rounded-md drop-shadow-lg">
+    <div class="h-1/3 bg-slate-800 border-4 border-zinc-900 rounded-t-md">
+        <h2 class="text-slate-300 text-2xl pt-2 pl-2">${res.getName()}</h2>
+        <h3 class="text-slate-300 text-xl text-center"><i class="fas fa-user"></i> ${res.getRole()}</h3>
     </div>
     <div class="py-12 px-2">
-        <p class="pb-1"><span class="font-bold">ID: </span>${res.getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
+        <p class="pb-1 text-sky-400"><span class=" text-slate-300 font-bold">ID: </span>${res.getID()}</p>
+        <p class="pb-1"><span class=" text-slate-300 font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
     </div>
 </div>
 `
@@ -47,15 +47,15 @@ function renderEmployee(res) {
 
 function renderIntern(res) {
     return `
-<div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
-    <div class="h-1/3 bg-sky-700 border-4 border-sky-600 rounded-t-md">
-        <h2 class="text-white text-2xl pt-2 pl-2">${res.getName()}</h2>
-        <h3 class="text-white text-xl text-center"><i class="fas fa-user-graduate"></i> ${res.getRole()}</h3>
+<div class="flex-none h-64 w-80 bg-zinc-900 rounded-md drop-shadow-lg">
+    <div class="h-1/3 bg-slate-800 border-4 border-zinc-900 rounded-t-md">
+        <h2 class="text-slate-300 text-2xl pt-2 pl-2">${res.getName()}</h2>
+        <h3 class="text-slate-300 text-xl text-center"><i class="fas fa-user-graduate"></i> ${res.getRole()}</h3>
     </div>
     <div class="py-12 px-2">
-        <p class="pb-1"><span class="font-bold">ID: </span>${res.getID()}</p>
-        <p class="pb-1"><span class="font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
-        <p class="pb-1"><span class="font-bold">School: </span>${res.getSchool()}</p>
+        <p class="pb-1 text-sky-400"><span class="text-slate-300 font-bold">ID: </span>${res.getID()}</p>
+        <p class="pb-1"><span class="text-slate-300 font-bold">Email: </span><a class="text-sky-700" id="link" name="email" href="mailto:${res.getEmail()}"> ${res.getEmail()}</a></p>
+        <p class="pb-1 text-sky-400"><span class="text-slate-300 font-bold">School: </span>${res.getSchool()}</p>
     </div>
 </div>
 `
@@ -101,10 +101,10 @@ return `
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Team Profile</title>
 </head>
-<body>
+<body class="bg-slate-800">
     <header>
-        <div class="flex justify-center items-center h-40 bg-rose-500 border-8 border-rose-600">
-            <h1 class="text-7xl text-rose-500 font-light bg-white border-8 border-rose-600 rounded-md p-2 custom-h1">My Team</h1>
+        <div class="flex justify-center items-center h-40 bg-zinc-900">
+            <h1 class="text-7xl text-slate-300 font-light bg-slate-800 border-4 border-zinc-900 rounded-md p-2 custom-h1">My Team</h1>
         </div>
     </header>
 
