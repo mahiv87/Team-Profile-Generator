@@ -1,3 +1,4 @@
+// Function to render html for Manager info
 function renderManager(res) {
     return `
 <div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
@@ -14,6 +15,7 @@ function renderManager(res) {
 `
 }
 
+// Function to render html for Engineer info
 function renderEngineer(res) {
     return `
 <div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
@@ -30,6 +32,7 @@ function renderEngineer(res) {
 `
 }
 
+// Function to render html for Employee info
 function renderEmployee(res) {
     return `
 <div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
@@ -45,6 +48,7 @@ function renderEmployee(res) {
 `
 }
 
+// Function to render html for Intern info
 function renderIntern(res) {
     return `
 <div class="flex-none h-64 w-80 bg-white rounded-md drop-shadow-lg">
@@ -61,6 +65,7 @@ function renderIntern(res) {
 `
 }
 
+// Function adds role html to be displayed in the Team Profile
 function renderTeam(data) {
     let team = '';
     data.forEach(obj => {``
@@ -86,6 +91,7 @@ function renderTeam(data) {
     return team;
 }
 
+// Function renders html for the Team Profile
 function renderHtml(data) {
 return `
 <!DOCTYPE html>

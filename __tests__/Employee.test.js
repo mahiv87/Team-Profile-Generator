@@ -1,6 +1,14 @@
 const Employee = require('../lib/Employee');
 
 describe('Employee', () => {
+    describe('Initialization', () => {
+        it('should return an object containing a property when called with the "new" keyword', () => {
+            const obj = new Employee();
+
+            expect('name' in obj).toEqual(true);
+        })
+    })
+
     describe('getName', () => {
         it('should return a name', () => {
             const name = 'marcus';

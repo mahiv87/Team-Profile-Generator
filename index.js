@@ -6,8 +6,10 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+// Array to hold team info
 const teamArr = [];
 
+// Array of questions about the Manager
 const managerQuestions = [
   {
     type: 'input',    
@@ -31,6 +33,7 @@ const managerQuestions = [
   },
 ]
 
+// Question to add member or not
 const addMember = [
   {
     type: 'list',
@@ -40,6 +43,7 @@ const addMember = [
   },
 ]
 
+// Array of questions about an Engineer
 const engineerQuestions = [
   {
     type: 'input',
@@ -63,6 +67,7 @@ const engineerQuestions = [
   },
 ]
 
+// Array of questions about an Employee
 const employeeQuestions = [
   {
     type: 'input',    
@@ -81,6 +86,7 @@ const employeeQuestions = [
   },
 ]
 
+// Array of questions about an Intern
 const internQuestions = [
   {
     type: 'input',
@@ -104,6 +110,7 @@ const internQuestions = [
   },
 ]
 
+// Function that to add a certain team member, or to call write file function if finished
 function newMember() {
   inquirer
     .prompt(addMember)
@@ -138,11 +145,12 @@ function newMember() {
     })
 }
 
+// Function to write file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => err ? console.log(err) : console.log('Success!'));
 }
 
-
+// Function to initiate the app
 function init() {
   inquirer
   .prompt(managerQuestions)
@@ -153,5 +161,5 @@ function init() {
   })
 }
 
-
+// Calls the initiation function
 init();
