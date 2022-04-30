@@ -11,8 +11,11 @@
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
+- [Screenshot](#screenshot)
 
 ## Description
+
+[Link to video demonstration](https://drive.google.com/file/d/1wzZEqR84ntb-dssJblkzcJYgao9QB8dV/view?usp=sharing)
 
 TPG dynamically creates cards with info of each member on your team
 
@@ -64,4 +67,8 @@ You can submit any questions to:
 [GitHub](https://github.com/mahiv87)
 
 maherreraiv1987@gmail.com
+
+## Screenshot
+
+![Screenshot of Team Profile](./images/Team-Profile.png)
 
